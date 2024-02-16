@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(39, 39, 39);
+}
+
+th {
+    background-color: #020202  !important;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  td {
+    background-color: #333232 !important;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  .navbar.navbar-expand-lg.bg-dark {
+    background-color: #151515 !important;
+  }
+
+.text-center.text-white {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold !important;
+}
