@@ -15,20 +15,22 @@ export const NavBar = () => {
               <li className="nav-item">
                 <Link to={'/'} className="nav-link active" aria-current="page" href="#">Libros</Link>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </a>
+              <div className="btn-group dropup">
+              <Link to={'/categorias'} className="nav-link active" aria-current="page" href="#">Categorias</Link>
+                <li  className="btn  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span className="visually-hidden">Toggle Dropdown</span>
+                </li>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
+                <li><Link to={'/novelas'} className="dropdown-item" href="#">Novelas</Link></li>
                   <li><Link to={'/terror'} className="dropdown-item" href="#">Terror</Link></li>
-                  <li><a className="dropdown-item" href="#">Drama</a></li>
-                  <li><a className="dropdown-item" href="#">Comedias</a></li>
+                  <li><Link to={'/drama'} className="dropdown-item" href="#">Drama</Link></li>
+                  <li><Link to={'/enciclopedias'} className="dropdown-item" href="#">Enciclopedias</Link></li>
                 </ul>
-              </li>
+              </div>
+
               <li className="nav-item">
                 <Link to={'/reservas'} className="nav-link active" href="#">Reservas</Link>
-              </li>         
+              </li>
               <li className="nav-item">
                 <Link to={'/usuarios'} className="nav-link active" href="#" aria-disabled="true">Usuarios</Link>
               </li>
