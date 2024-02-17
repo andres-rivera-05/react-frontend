@@ -74,7 +74,7 @@ export const Novelas = () => {
         
          
         <div className='container col-8 mt-5'>
-                <h1 className='text-center text-white'>Categoria Libro - Terror</h1>
+                <h1 className='text-center text-white'>Categoria Libro - Novelas</h1>
                 <div className='mt-5'>
                    <NavBar></NavBar>
                 </div>

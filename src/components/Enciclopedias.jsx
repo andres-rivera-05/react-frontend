@@ -73,7 +73,7 @@ export const Enciclopedias = () => {
         
          
         <div className='container col-8 mt-5'>
-                <h1 className='text-center text-white'>Categoria Libro - Terror</h1>
+                <h1 className='text-center text-white'>Categoria Libro - Enciclopedia</h1>
                 <div className='mt-5'>
                    <NavBar></NavBar>
                 </div>
