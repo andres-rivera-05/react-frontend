@@ -9,7 +9,7 @@ export const Reservas = () => {
     {
         position : 1,
         usuario: "Juan Perez",
-        libro : "El Principito",
+        libro : "Romeo y Julieta",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -25,7 +25,7 @@ export const Reservas = () => {
     {
         position : 3,
         usuario : "Itali Madrid",
-        libro : "El Principito",
+        libro : "El exorcista",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -33,7 +33,7 @@ export const Reservas = () => {
     {
         position : 4,
         usuario : "Fernando Manueles",
-        libro : "El Principito",
+        libro : "Emily Brontë",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -41,7 +41,7 @@ export const Reservas = () => {
     {
         position : 5,
         usuario: "Daniel Mejia",
-        libro : "El Principito",
+        libro : "Frankenstein",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -49,7 +49,7 @@ export const Reservas = () => {
     {
         position : 6,
         usuario : "Patricia Castro",
-        libro : "El Principito",
+        libro : "Enciclopedia de Filosofía",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -57,7 +57,7 @@ export const Reservas = () => {
     {
         position : 7,
         usuario : "David Rodriguez",
-        libro : "El Principito",
+        libro : "Enciclopedia de la Mitología",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"
@@ -65,7 +65,7 @@ export const Reservas = () => {
     {
         position : 8,
         usuario : "Carlos Euceda",
-        libro : "El Principito",
+        libro : "Matar a un ruiseñor",
         fecha_reserva: "2024-02-17",
         fecha_devolucion: "2024-02-19",
         estado : "Activo"

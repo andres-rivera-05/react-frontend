@@ -5,7 +5,7 @@ export const Terror = () => {
 
 
       
-const TablaLibros =[
+const TablaTerror =[
 
   {
     position: 1,
@@ -90,7 +90,7 @@ const TablaLibros =[
                     </tr>
                 </thead>
                 <tbody>
-                    { TablaLibros.map( (item) =>(
+                    { TablaTerror.map( (item) =>(
                          
                          <tr key={item.position}>
                           <td>{item.position}</td>
