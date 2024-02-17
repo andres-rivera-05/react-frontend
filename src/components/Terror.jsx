@@ -8,47 +8,66 @@ export const Terror = () => {
 const TablaLibros =[
 
   {
-      position : 1,
-      libro: "Real Madrid",
-      autor : "Disponible",
-      categoria : "Terror"
+    position: 1,
+    libro: "El resplandor",
+    autor: "Stephen King",
+    categoria: "Terror"
   },
   {
-    position : 2,
-    libro: "Real Madrid",
-    autor : "Disponible",
-    categoria : "Terror"
-},
-{
-  position : 3,
-  libro: "Real Madrid",
-  autor : "Disponible",
-  categoria : "Terror"
-},
-{
-  position : 4,
-  libro: "Real Madrid",
-  autor : "Disponible",
-  categoria : "Terror"
-},
-{
-  position : 5,
-  libro: "Real Madrid",
-  autor : "Disponible",
-  categoria : "Terror"
-},
-{
-  position : 6,
-  libro: "Real Madrid",
-  autor : "Disponible",
-  categoria : "Terror"
-},
-{
-  position : 7,
-  libro: "Real Madrid",
-  autor : "Disponible",
-  categoria : "Terror"
-}
+    position: 2,
+    libro: "IT",
+    autor: "Stephen King",
+    categoria: "Terror"
+  },
+  {
+    position: 3,
+    libro: "El exorcista",
+    autor: "William Peter Blatty",
+    categoria: "Terror"
+  },
+  {
+    position: 4,
+    libro: "Drácula",
+    autor: "Bram Stoker",
+    categoria: "Terror"
+  },
+  {
+    position: 5,
+    libro: "Frankenstein",
+    autor: "Mary Shelley",
+    categoria: "Terror"
+  },
+  {
+    position: 6,
+    libro: "El silencio de los corderos",
+    autor: "Thomas Harris",
+    categoria: "Terror"
+  },
+  {
+    position: 7,
+    libro: "El retrato de Dorian Gray",
+    autor: "Oscar Wilde",
+    categoria: "Terror"
+  },
+  {
+    position: 8,
+    libro: "Pet Sematary",
+    autor: "Stephen King",
+    categoria: "Terror"
+  },
+  {
+    position: 9,
+    libro: "El terror",
+    autor: "Dan Simmons",
+    categoria: "Terror"
+  },
+  {
+    position: 10,
+    libro: "American Psycho",
+    autor: "Bret Easton Ellis",
+    categoria: "Terror"
+  }
+  
 ]
 
   return (
