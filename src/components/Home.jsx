@@ -7,45 +7,95 @@ export const Home = () => {
 const TablaLibros =[
 
     {
-        position : 1,
-        equipo: "Real Madrid",
-        estado : "Disponible"
-    },
-    {
-        position : 2,
-        equipo : "FC Barcelona",
-        estado : "Reservado"
-    },
-    {
-        position : 3,
-        equipo : "Atletico Madrid",
-        estado : "Disponible"
-    },
-    {
-        position : 4,
-        equipo : "Real Sociedad",
-        estado : "Disponible"
-    },
-    {
-        position : 5,
-        equipo: "Real Madrid",
-        estado : "Disponible"
-    },
-    {
-        position : 6,
-        equipo : "FC Barcelona",
-        estado : "Reservado"
-    },
-    {
-        position : 7,
-        equipo : "Atletico Madrid",
-        estado : "Reservado"
-    },
-    {
-        position : 8,
-        equipo : "Real Sociedad",
-        estado : "Reservado"
-    }
+        position: 1,
+        libro: "El resplandor",
+        autor: "Stephen King",
+        estado: "Disponible"
+      },
+      {
+        position: 2,
+        libro: "Romeo y Julieta",
+        autor: "William Shakespeare",
+        estado: "Disponible"
+      },
+      {
+        position: 3,
+        libro: "Enciclopedia de Historia Universal",
+        autor: "Eric Hobsbawm",
+        estado: "Reservado"
+      },
+      {
+        position: 4,
+        libro: "1984",
+        autor: "George Orwell",
+        estado: "Disponible"
+      },
+      {
+        position: 5,
+        libro: "El arte de la guerra",
+        autor: "Sun Tzu",
+        estado: "Reservado"
+      },
+      {
+        position: 6,
+        libro: "El principito",
+        autor: "Antoine de Saint-Exupéry",
+        estado: "Disponible"
+      },
+      {
+        position: 7,
+        libro: "Cien años de soledad",
+        autor: "Gabriel García Márquez",
+        estado: "Disponible"
+      },
+      {
+        position: 8,
+        libro: "Breve historia del tiempo",
+        autor: "Stephen Hawking",
+        estado: "Disponible"
+      },
+      {
+        position: 9,
+        libro: "Mujercitas",
+        autor: "Louisa May Alcott",
+        estado: "Reservado"
+      },
+      {
+        position: 10,
+        libro: "Harry Potter y la piedra filosofal",
+        autor: "J.K. Rowling",
+        estado: "Disponible"
+      },
+      {
+        position: 11,
+        libro: "El señor de los anillos",
+        autor: "J.R.R. Tolkien",
+        estado: "Disponible"
+      },
+      {
+        position: 12,
+        libro: "Don Quijote de la Mancha",
+        autor: "Miguel de Cervantes",
+        estado: "Disponible"
+      },
+      {
+        position: 13,
+        libro: "Moby Dick",
+        autor: "Herman Melville",
+        estado: "Reservado"
+      },
+      {
+        position: 14,
+        libro: "Las aventuras de Sherlock Holmes",
+        autor: "Arthur Conan Doyle",
+        estado: "Disponible"
+      },
+      {
+        position: 15,
+        libro: "Orgullo y prejuicio",
+        autor: "Jane Austen",
+        estado: "Reservado"
+      }
 ]
   return (
     <>
@@ -70,8 +120,8 @@ const TablaLibros =[
                          
                          <tr key={item.position}>
                             <td>{item.position}</td>
-                            <td>{item.equipo}</td>
-                            <td>NAN</td>
+                            <td>{item.libro}</td>
+                            <td>{item.autor}</td>
                             <td>{item.estado}</td>
                        </tr>
 
@@ -79,7 +129,7 @@ const TablaLibros =[
                 </tbody>
             </table>
 
-            <h1 className='text-center text-white'>Libros</h1>
+           
         </div>
 
     
