@@ -1,54 +1,81 @@
 import React from 'react'
+import { NavBar  } from './NavBar'
 
 export const Reservas = () => {
 
-  const TablaUsers =[
+
+  const TablaReservas =[
 
     {
         position : 1,
-        nombre: "Juan Perez",
-        gmail : "juanperes24@gmail.com"
+        usuario: "Juan Perez",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 2,
-        nombre : "Maria Lopez",
-        gmail : "marialopez23@gmail.com"
+        usuario : "Maria Lopez",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 3,
-        nombre : "Itali Madrid",
-        gmail : "madriditali34@gmail.com"
+        usuario : "Itali Madrid",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 4,
-        nombre : "Fernando Manueles",
-        gmail : "Manuelesdestructor34@gmail.com"
+        usuario : "Fernando Manueles",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 5,
-        nombre: "Daniel Mejia",
-        gmail : "Danielmegia243@gmail.com"
+        usuario: "Daniel Mejia",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 6,
-        nombre : "Patricia Castro",
-        gmail : "paticastro54@gmail.com"
+        usuario : "Patricia Castro",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 7,
-        nombre : "David Rodriguez",
-        gmail : "rodrigesdavidd12312@gmail.com"
+        usuario : "David Rodriguez",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     },
     {
         position : 8,
-        nombre : "Carlos Euceda",
-        gmail : "Euces29323@gmail.com"
+        usuario : "Carlos Euceda",
+        libro : "El Principito",
+        fecha_reserva: "2024-02-17",
+        fecha_devolucion: "2024-02-19",
+        estado : "Activo"
     }
 ]
+
   return (
-    <>
-    <div className='container col-8 mt-5'>
-            <h1 className='text-center text-white'>Sistema Biblioteca</h1>
+   <>
+     <div className='container col-8 mt-5'>
+            <h1 className='text-center text-white'>Sistema Biblioteca - Reservas</h1>
             <div className='mt-5'>
                <NavBar></NavBar>
             </div>
@@ -57,17 +84,23 @@ export const Reservas = () => {
                 <thead>
                     <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Gmail</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Libro</th>
+                    <th scope="col">Fecha Reserva</th>
+                    <th scope="col">Fecha Devolucion</th>
+                    <th scope="col">Estado</th>
                     </tr>
                 </thead>
                 <tbody>
-                    { TablaUsers.map( (item) =>(
+                    { TablaReservas.map( (item) =>(
                          
                          <tr key={item.position}>
                            <td>{item.position}</td>
-                            <td>{item.nombre}</td>
-                            <td>{item.gmail}</td>                           
+                            <td>{item.usuario}</td>
+                            <td>{item.libro}</td>                           
+                            <td>{item.fecha_reserva}</td> 
+                            <td>{item.fecha_devolucion}</td>
+                            <td>{item.estado}</td>
                        </tr>
 
                     ))}  

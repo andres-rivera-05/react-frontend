@@ -78,6 +78,8 @@ const TablaLibros =[
                     ))}  
                 </tbody>
             </table>
+
+            <h1 className='text-center text-white'>Libros</h1>
         </div>
 
     

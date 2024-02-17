@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Categoris = () => {
   return (
-    <div>Categoris</div>
+    <div>
+      <h1 className='text-white'>hola</h1>
+    </div>
   )
 }
