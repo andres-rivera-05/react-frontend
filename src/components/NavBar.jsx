@@ -15,20 +15,20 @@ export const NavBar = () => {
               <li className="nav-item">
                 <Link to={'/'} className="nav-link active" aria-current="page" href="#">Libros</Link>
               </li>
-              <li className="nav-item">
-                <Link to={'/reservas'} className="nav-link active" href="#">Reservas</Link>
-              </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categorias
                 </a>
                 <ul className="dropdown-menu">
                   <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Terror</a></li>
+                  <li><Link to={'/terror'} className="dropdown-item" href="#">Terror</Link></li>
                   <li><a className="dropdown-item" href="#">Drama</a></li>
                   <li><a className="dropdown-item" href="#">Comedias</a></li>
                 </ul>
               </li>
+              <li className="nav-item">
+                <Link to={'/reservas'} className="nav-link active" href="#">Reservas</Link>
+              </li>         
               <li className="nav-item">
                 <Link to={'/usuarios'} className="nav-link active" href="#" aria-disabled="true">Usuarios</Link>
               </li>
