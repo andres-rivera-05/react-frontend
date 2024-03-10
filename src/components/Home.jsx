@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 import { NavBar } from './NavBar'
+import axios from 'axios'
 
 export const Home = () => {
 
+  
+  const [dtaLibros, setDataLibros]= useState([]);
+
+
+      const getLibros = async ()=>{
+
+        const url = "http://localhost:5000/api/libro";
+        const response = await axios.get(url);
+        const datos = await (response).data;
+
+        setDataLibros(datos);
+      }
+
+  useEffect(()=>{
+
+    getLibros();
+
+  },[])
+ 
     
 const TablaLibros =[
 
