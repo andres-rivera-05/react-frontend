@@ -10,6 +10,8 @@ th {
   td {
     background-color: #333232 !important;
     color: rgb(255, 255, 255) !important;
+    padding:  0 5px !important;
+    line-height: 2;
   }
 
   .navbar.navbar-expand-lg.bg-dark {
@@ -19,4 +21,14 @@ th {
 .text-center.text-white {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold !important;
+}
+
+dl, ol, ul {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+button.btn.btn-danger {
+  scale: 0.7;
 }

@@ -1,158 +1,147 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavBar } from './NavBar'
 import axios from 'axios'
 
+
+
 export const Home = () => {
 
-  
-  const [dtaLibros, setDataLibros]= useState([]);
+  const [dataLibros, setDataLibros] = useState([]);
+  const [cambioEstado, setCambioEstado] = useState(0);
+  const [filtro, setFiltro] = useState('');
+  const [busquedaRealizada, setBusquedaRealizada] = useState(false);
+  const [libroEncontrado, setLibroEncontrado] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const getLibros = async () => {
+    const url = "http://localhost:5000/api/libro";
+    const response = await axios.get(url);
+    return response.data
+  }
 
-      const getLibros = async ()=>{
+  useEffect(() => {
 
-        const url = "http://localhost:5000/api/libro";
-        const response = await axios.get(url);
-        const datos = await (response).data;
-
-        setDataLibros(datos);
+    const fetchDatda = async () => {
+      try {
+        const libros = await getLibros();
+        setDataLibros(libros)
+      } catch (err) {
+        console.error("Error al obtener datos:", err);
+      } finally {
+        setIsLoading(false)
       }
+    }
 
-  useEffect(()=>{
+    fetchDatda();
 
-    getLibros();
+  }, [cambioEstado])
 
-  },[])
- 
-    
-const TablaLibros =[
 
-    {
-        position: 1,
-        libro: "El resplandor",
-        autor: "Stephen King",
-        estado: "Disponible"
-      },
-      {
-        position: 2,
-        libro: "Romeo y Julieta",
-        autor: "William Shakespeare",
-        estado: "Disponible"
-      },
-      {
-        position: 3,
-        libro: "Enciclopedia de Historia Universal",
-        autor: "Eric Hobsbawm",
-        estado: "Reservado"
-      },
-      {
-        position: 4,
-        libro: "1984",
-        autor: "George Orwell",
-        estado: "Disponible"
-      },
-      {
-        position: 5,
-        libro: "El arte de la guerra",
-        autor: "Sun Tzu",
-        estado: "Reservado"
-      },
-      {
-        position: 6,
-        libro: "El principito",
-        autor: "Antoine de Saint-Exupéry",
-        estado: "Disponible"
-      },
-      {
-        position: 7,
-        libro: "Cien años de soledad",
-        autor: "Gabriel García Márquez",
-        estado: "Disponible"
-      },
-      {
-        position: 8,
-        libro: "Breve historia del tiempo",
-        autor: "Stephen Hawking",
-        estado: "Disponible"
-      },
-      {
-        position: 9,
-        libro: "Mujercitas",
-        autor: "Louisa May Alcott",
-        estado: "Reservado"
-      },
-      {
-        position: 10,
-        libro: "Harry Potter y la piedra filosofal",
-        autor: "J.K. Rowling",
-        estado: "Disponible"
-      },
-      {
-        position: 11,
-        libro: "El señor de los anillos",
-        autor: "J.R.R. Tolkien",
-        estado: "Disponible"
-      },
-      {
-        position: 12,
-        libro: "Don Quijote de la Mancha",
-        autor: "Miguel de Cervantes",
-        estado: "Disponible"
-      },
-      {
-        position: 13,
-        libro: "Moby Dick",
-        autor: "Herman Melville",
-        estado: "Reservado"
-      },
-      {
-        position: 14,
-        libro: "Las aventuras de Sherlock Holmes",
-        autor: "Arthur Conan Doyle",
-        estado: "Disponible"
-      },
-      {
-        position: 15,
-        libro: "Orgullo y prejuicio",
-        autor: "Jane Austen",
-        estado: "Reservado"
+  const buscar = () => {
+    if (busquedaRealizada) {
+      if (filtro.trim() === '') {
+        return dataLibros;
+      } else {
+        return dataLibros.filter(libro =>
+          libro.id.toString().includes(filtro.toLowerCase()) ||
+          libro.titulo.toLowerCase().includes(filtro.toLowerCase()) ||
+          libro.autor.toLowerCase().includes(filtro.toLowerCase()) ||
+          libro.estado.toLowerCase().includes(filtro.toLowerCase())
+        );
       }
-]
+    } else {
+      return []
+    }
+  }
+
+
+  const handlerFiltroChange = (value) => {
+    setFiltro(value);
+    console.log("hola", value)
+
+    if (value.trim() === '') {
+      setBusquedaRealizada(false)
+    }
+  };
+
+  const handlerBusquedaClick = () => {
+    setBusquedaRealizada(true);
+    const libroEncontrado = buscar();
+    setLibroEncontrado(libroEncontrado.length > 0 ? libroEncontrado[0] : null);
+  };
+
+  const borrarLibro = async (idLibro) => {
+    const url = `http://localhost:5000/api/libro/delete/${idLibro}`;
+    const response = await axios.delete(url);
+    const datos = await (response).data;
+    setCambioEstado(cambioEstado + 1)
+  }
+
   return (
     <>
-    
-    <div className='container col-8 mt-5'>
-            <h1 className='text-center text-white'>Sistema Biblioteca</h1>
-            <div className='mt-5'>
-               <NavBar></NavBar>
-            </div>
-        
-            <table className='table table-bordered border-secondary'>
-                <thead>
-                    <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Libros</th>
-                    <th scope="col">Autor</th>
-                    <th scope="col">Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { TablaLibros.map( (item) =>(
-                         
-                         <tr key={item.position}>
-                            <td>{item.position}</td>
-                            <td>{item.libro}</td>
-                            <td>{item.autor}</td>
-                            <td>{item.estado}</td>
-                       </tr>
 
-                    ))}  
-                </tbody>
-            </table>
-
-           
+      <div className='container col-10 mt-5'>
+        <h1 className='text-center text-white'>Sistema Biblioteca</h1>
+        <div className='mt-5'>
+          <NavBar
+            filtro={filtro}
+            onFiltroChange={(event) => handlerFiltroChange(event)}
+            onBusquedaClick={(event) => handlerBusquedaClick(event)}></NavBar>
         </div>
 
-    
+        {
+          isLoading ? (
+            <div className="text-center">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : (
+            <table className='table table-bordered border-secondary'>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Libros</th>
+                  <th scope="col">Autor</th>
+                  <th scope="col">Ano Publicacion</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  busquedaRealizada && libroEncontrado ? (
+                    <tr key={libroEncontrado.id}>
+                      <td>{libroEncontrado.id}</td>
+                      <td>{libroEncontrado.titulo}</td>
+                      <td>{libroEncontrado.autor}</td>
+                      <td>{libroEncontrado.anio_publicacion}</td>
+                      <td>{libroEncontrado.estado}</td>
+                      <td className='text-center'><button className='btn btn-danger' onClick={() => borrarLibro(libroEncontrado.id)}>X</button></td>
+                    </tr>
+                  ) : busquedaRealizada && !libroEncontrado ? (
+                    <tr>
+                      <td colSpan="6">No se encontraron resultados.</td>
+                    </tr>
+                  ) : (
+                    dataLibros.map((item) => (
+                      <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.titulo}</td>
+                        <td>{item.autor}</td>
+                        <td>{item.anio_publicacion}</td>
+                        <td>{item.estado}</td>
+                        <td className='text-center'><button className='btn btn-danger' onClick={() => borrarLibro(item.id)}>X</button></td>
+                      </tr>
+                    ))
+                  )
+                }
+              </tbody>
+            </table>
+          )
+        }
+      </div>
     </>
   )
 }
+

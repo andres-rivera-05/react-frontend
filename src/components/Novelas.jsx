@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 import { NavBar } from './NavBar'
+import axios from 'axios'
 
 export const Novelas = () => {
- 
+
+
 
     const TablaNovelas =[
 
